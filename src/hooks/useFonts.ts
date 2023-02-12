@@ -1,8 +1,7 @@
 import { useState } from 'react'
-
-type FontStateType = 'inter' | 'lora' | 'inconsolata'
+import { FontStateType } from '@/typings'
 
 export function useFonts() {
-  const [font, setFont] = useState<FontStateType>('inter')
+  const [font, setFont] = useState<FontStateType>('inconsolata')
   return [font, setFont]
 }
