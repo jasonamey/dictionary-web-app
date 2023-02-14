@@ -1,7 +1,12 @@
 import Head from 'next/head'
 import styled from 'styled-components'
+import { DarkToggle } from '@/components/DarkToggle'
 
-const Container = styled.div``
+import { PageContainer } from '@/ui'
+
+const Container = styled.div`
+  color: var(--color-bg_1);
+`
 
 export default function Home() {
   return (
@@ -11,7 +16,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Container>hello world</Container>
+        <PageContainer>
+          <Container>hello world</Container>
+          <DarkToggle />
+        </PageContainer>
       </main>
     </>
   )

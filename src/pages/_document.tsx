@@ -1,6 +1,9 @@
-import Document from 'next/document'
+// import Document from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+
 import { ServerStyleSheet } from 'styled-components'
 import type { DocumentContext } from 'next/document'
+import { FallbackStyles, MagicScriptTag } from '@/styles/InlineCssVariables'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -27,5 +30,19 @@ export default class MyDocument extends Document {
     } finally {
       sheet.seal()
     }
+  }
+  render() {
+    return (
+      <Html>
+        <Head>
+          <FallbackStyles />
+        </Head>
+        <body>
+          <MagicScriptTag />
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
   }
 }
