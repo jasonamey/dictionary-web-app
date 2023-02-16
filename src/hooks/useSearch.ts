@@ -1,14 +1,20 @@
 import { useState, useEffect } from 'react'
-import { DICTIONARY_API_URL } from '@/constants'
+import { getDefinition } from '@/api/response'
+import { shapeApiResponse } from '@/api/utils'
+import { DictionaryDefinitionType } from '@/typings'
 
 export function useSearch(term: string) {
-  const [dictionaryResponse, setDictionaryResponse] = useState<unknown>()
+  const [dictionaryResponse, setDictionaryDefinition] =
+    useState<DictionaryDefinitionType>()
+  const [isLoading, setIsLoading] = useState(false)
   useEffect(() => {
     ;(async function () {
-      const response = await fetch(`${DICTIONARY_API_URL}${term}`)
-      const data = await response.json()
-      setDictionaryResponse(data)
+      setIsLoading(true)
+      const data = await getDefinition(term)
+      const wordContext = shapeApiResponse(data[0])
+      setDictionaryDefinition(wordContext)
+      setIsLoading(false)
     })()
   }, [term])
-  return { dictionaryResponse }
+  return { result: dictionaryResponse, isLoading }
 }

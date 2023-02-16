@@ -1,5 +1,5 @@
 import { GlobalStyles } from '../styles/global-styles'
-import { ThemeProvider, DefinitionProvider } from '@/context'
+import { ThemeProvider } from '@/context'
 import type { AppProps } from 'next/app'
 import { Inter, Lora, Inconsolata } from '@next/font/google'
 import { useFonts } from '@/hooks'
@@ -36,12 +36,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <ThemeProvider>
-        <DefinitionProvider>
-          <GlobalStyles />
-          <main className={fontsFactory(font as FontStateType)}>
-            <Component {...pageProps} />
-          </main>
-        </DefinitionProvider>
+        <GlobalStyles />
+        <main className={fontsFactory(font as FontStateType)}>
+          <Component {...pageProps} />
+        </main>
       </ThemeProvider>
     </>
   )

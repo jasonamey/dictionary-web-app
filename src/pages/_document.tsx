@@ -1,6 +1,4 @@
-// import Document from 'next/document'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-
 import { ServerStyleSheet } from 'styled-components'
 import type { DocumentContext } from 'next/document'
 import { FallbackStyles, MagicScriptTag } from '@/styles/InlineCssVariables'
