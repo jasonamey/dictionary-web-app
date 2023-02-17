@@ -1,2 +1,7 @@
 export { Heading } from './heading'
+export { AudioButton } from './audio'
 export { Search } from './search'
+export { Toggle } from './toggle'
+export { Phonetic } from './phonetic'
+export { Source } from './source'
+export { MeaningsList } from './meanings-list'

@@ -1,0 +1,1 @@
+export { Synonym } from './Synonym'

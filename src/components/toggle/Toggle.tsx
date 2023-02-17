@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-
 import { ThemeContext } from '@/context/ThemeContext'
 
-export const DarkToggle = () => {
-  const { colorMode = 'light', setColorMode } = useContext(ThemeContext)
+export const Toggle = () => {
+  const context = useContext(ThemeContext)
+  const { colorMode, setColorMode } = context
 
   return (
     <>
@@ -15,9 +15,8 @@ export const DarkToggle = () => {
             setColorMode(ev.target.checked ? 'dark' : 'light')
           }}
         />
-        Dark
+        {colorMode === 'dark' ? 'Dark' : 'Light'}
       </label>
-      <p>the dark toggle</p>
     </>
   )
 }

@@ -7,18 +7,15 @@ type ContentContainerProps = {
 }
 
 const Container = styled.div`
-  width: 95%;
+  width: 70%;
   max-width: 52rem;
-  background-color: var(--white);
-  border-radius: 0.8rem;
+  background-color: var(--color-bg_1);
   padding: 1em;
   display: flex;
   flex-direction: column;
-  margin-bottom: 3rem;
+  align-items: center;
   @media screen and ${device.tablet} {
     width: 90%;
-    height: 28rem;
-    flex-direction: row;
   }
 `
 

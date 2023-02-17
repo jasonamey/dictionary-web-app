@@ -6,11 +6,8 @@ rendered.
 */
 
 import Terser from 'terser'
-import {
-  COLORS,
-  COLOR_MODE_KEY,
-  INITIAL_COLOR_MODE_CSS_PROP,
-} from '../constants'
+import { COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from '../constants'
+import { COLORS } from './colors'
 
 function setColorsByTheme() {
   const colors = '%'
@@ -37,7 +34,6 @@ function setColorsByTheme() {
 
   Object.entries(colors).forEach(([name, colorByTheme]) => {
     const cssVarName = `--color-${name}`
-
     root.style.setProperty(cssVarName, colorByTheme[colorMode])
   })
 }

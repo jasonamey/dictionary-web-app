@@ -12,26 +12,3 @@ export const DEFINITION = 'definition'
 export const DEFINITIONS = 'definitions'
 export const SOURCE_URL = 'sourceUrl'
 export const EXAMPLE = 'example'
-
-export const COLORS = {
-  txt_1: {
-    light: '#0505050',
-    dark: '#FFFFFF',
-  },
-  bg_1: {
-    light: 'green',
-    dark: '#0505050',
-  },
-  txt_2: {
-    light: '#2D2D2D',
-    dark: '#FFFFFF',
-  },
-  bg_2: {
-    light: '#F4F4F4',
-    dark: '#1F1F1F',
-  },
-  txt_3: {
-    light: '#757575',
-    dark: '#757575',
-  },
-}

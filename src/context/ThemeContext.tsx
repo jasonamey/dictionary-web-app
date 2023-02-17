@@ -1,15 +1,12 @@
 import React, { createContext, useState, useEffect, useMemo } from 'react'
-import {
-  INITIAL_COLOR_MODE_CSS_PROP,
-  COLOR_MODE_KEY,
-  COLORS,
-} from '@/constants'
+import { INITIAL_COLOR_MODE_CSS_PROP, COLOR_MODE_KEY } from '@/constants'
+import { COLORS } from '@/styles/colors'
 
 type ModeType = 'light' | 'dark' | null
 type ThemeContextType = {
   colorMode: ModeType
   setColorMode: (newValue: ModeType) => void
-} | null
+}
 type ModeProviderProps = { children: React.ReactNode }
 
 export const ThemeContext = createContext<ThemeContextType>(

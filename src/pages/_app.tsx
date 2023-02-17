@@ -6,17 +6,17 @@ import { useFonts } from '@/hooks'
 import { FontStateType } from '@/typings'
 
 const inter = Inter({
-  weight: '400',
+  weight: 'variable',
   subsets: ['latin'],
 })
 
 const lora = Lora({
-  weight: '400',
+  weight: 'variable',
   subsets: ['latin'],
 })
 
 const inconsolata = Inconsolata({
-  weight: '400',
+  weight: 'variable',
   subsets: ['latin'],
 })
 

@@ -8,12 +8,12 @@ type PageContainerProps = {
 const Container = styled.div`
   min-height: 100vh;
   width: 100vw;
-  padding: 5%;
-  background-color: var(--light-blue);
+  background-color: var(--color-bg_1);
+  color: var(--color-txt_1);
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
+  padding: 1rem 0 4rem 0;
 `
 
 export function PageContainer({ children }: PageContainerProps) {

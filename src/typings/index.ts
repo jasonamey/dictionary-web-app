@@ -6,15 +6,15 @@ export type DefinitionType = {
 }
 
 export type FormattedMeaningType = {
-  partOfSpeach: string
+  partOfSpeech: string
   synonyms: string[] | undefined
   definitions: DefinitionType[]
-  example?: string
 }
 
 export type DictionaryDefinitionType = {
   word: string
   audio: string
   text: string
-  meaning: FormattedMeaningType[]
+  meanings: FormattedMeaningType[]
+  sourceUrl: string
 }
