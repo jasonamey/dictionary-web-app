@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { DefinitionType } from '@/typings'
+import { device } from '@/styles/devices'
 
 type DefinitionsListProps = {
   definitions: DefinitionType[]
@@ -12,6 +13,9 @@ const Container = styled.ul`
 `
 const ItemContainer = styled.div`
   margin-bottom: 1rem;
+  @media screen and ${device.tablet} {
+    font-size: inherit;
+  }
 `
 
 const Definition = styled.li`
@@ -19,7 +23,7 @@ const Definition = styled.li`
   list-style: none;
   position: relative;
   line-heigh: 1rem;
-  //custome list bullet style :
+  //custom list bullet style :
   &:before {
     content: '';
     display: inline-block;
