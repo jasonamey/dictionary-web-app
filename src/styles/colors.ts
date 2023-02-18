@@ -31,4 +31,8 @@ export const COLORS = {
     light: '#8F19E8',
     dark: '#8F19E8',
   },
+  toggle: {
+    light: '#757575',
+    dark: '#8F19E8',
+  },
 }

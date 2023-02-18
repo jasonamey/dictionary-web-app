@@ -16,6 +16,21 @@ const ItemContainer = styled.div`
 
 const Definition = styled.li`
   margin-bottom: 0.3rem;
+  list-style: none;
+  position: relative;
+  line-heigh: 1rem;
+  //custome list bullet style :
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 6px;
+    width: 6px;
+    background-image: url('./purple-list-dot.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0.5rem;
+    left: -1rem;
+  }
 `
 const Example = styled.span`
   color: var(--color-txt_2);

@@ -14,7 +14,6 @@ const Button = styled.button`
   align-items: center;
 `
 export function AudioButton({ audioClip }: AudioButtonProps) {
-  console.log('da audio', audioClip)
   const audio = new Audio(audioClip)
   function clickHandler() {
     audio.play()

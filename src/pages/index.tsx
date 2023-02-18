@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import {
   Heading,
   Search,
-  Toggle,
   AudioButton,
   Phonetic,
+  Banner,
   Source,
   MeaningsList,
 } from '@/components'
@@ -68,7 +68,7 @@ export default function Home() {
         <PageContainer>
           <ContentContainer>
             <Top>
-              <Toggle />
+              <Banner />
               <Search searchFn={searchFn} />
             </Top>
             <Bottom>{bottomContent}</Bottom>

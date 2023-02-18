@@ -11,7 +11,6 @@ export const GlobalStyles = createGlobalStyle`
   }
   main {
     background-color: var(--color-bg_1);
-    // color: var(--color-txt_2);
   }
 
   h1, h2, h3, ul, li, p { 
