@@ -62,8 +62,6 @@ export default function Home() {
           <Source sourceUrl={sourceUrl} />
         </>
       )
-    } else {
-      bottomContent = <Heading>Word Not Found!</Heading>
     }
   }
   if (isError) {
