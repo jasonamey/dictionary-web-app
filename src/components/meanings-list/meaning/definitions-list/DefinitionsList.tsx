@@ -13,6 +13,7 @@ const Container = styled.ul`
 `
 const ItemContainer = styled.div`
   margin-bottom: 1rem;
+
   @media screen and ${device.tablet} {
     font-size: inherit;
   }
