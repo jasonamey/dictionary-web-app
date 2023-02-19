@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { device } from '@/styles/devices'
 
 type PageContainerProps = {
   children: React.ReactNode
@@ -13,7 +14,9 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 1rem 0 4rem 0;
+  @media screen and ${device.tablet} {
+    padding: 1rem 0 4rem 0;
+  }
 `
 
 export function PageContainer({ children }: PageContainerProps) {
