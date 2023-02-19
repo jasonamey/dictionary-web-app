@@ -1,6 +1,7 @@
 import { textSizeFactory } from '@/styles/mixins'
 import React from 'react'
 import styled from 'styled-components'
+import { device } from '@/styles/devices'
 
 type SynonymProps = {
   synonymText: string
@@ -20,7 +21,10 @@ const TitleContainer = styled.span`
 const TextContainer = styled.span`
   color: var(--color-accent);
   font-weight: 700;
-  ${textSizeFactory('sizeTwo')};
+  ${textSizeFactory('sizeOne')};
+  @media screen and ${device.tablet} {
+    ${textSizeFactory('sizeTwo')};
+  }
 `
 
 export function Synonym({ synonymText }: SynonymProps) {

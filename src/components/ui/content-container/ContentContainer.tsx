@@ -7,7 +7,7 @@ type ContentContainerProps = {
 }
 
 const Container = styled.div`
-  width: 95%;
+  width: 90%;
   max-width: 52rem;
   background-color: var(--color-bg_1);
   padding: 1em;
