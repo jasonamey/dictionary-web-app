@@ -29,6 +29,14 @@ function getPhonetics(phonetics: Phonetic[]) {
   }
 }
 
+function cleanDefinition(definition: string) {
+  if (definition.slice(definition.length - 1) === ':') {
+    return `${definition.slice(0, definition.length - 1)}.`
+  } else {
+    return definition
+  }
+}
+
 function getMeanings(meanings: Meaning[]) {
   let formattedMeanings: FormattedMeaningType[] = []
   meanings.forEach((meaningItem) => {
@@ -38,7 +46,9 @@ function getMeanings(meanings: Meaning[]) {
       meaningItem[SYNONYMS] === undefined ? [] : meaningItem[SYNONYMS]
     const definitions: DefinitionType[] = []
     meaningItem[DEFINITIONS].forEach((definitionItem) => {
-      const newDefinitionItem = { definition: definitionItem[DEFINITION] }
+      const newDefinitionItem = {
+        definition: cleanDefinition(definitionItem[DEFINITION]),
+      }
       if (Object.prototype.hasOwnProperty.call(definitionItem, EXAMPLE)) {
         newDefinitionItem[EXAMPLE] = definitionItem[EXAMPLE]
       }
