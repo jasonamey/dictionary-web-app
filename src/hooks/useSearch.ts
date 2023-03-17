@@ -17,7 +17,6 @@ export function useSearch(term: string) {
         setDictionaryDefinition(wordContext)
         setIsLoading(false)
       } catch (e) {
-        console.log('da error', e)
         setIsError(true)
         setIsLoading(false)
       }

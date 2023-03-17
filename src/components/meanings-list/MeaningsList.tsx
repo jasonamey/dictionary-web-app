@@ -12,7 +12,7 @@ const Container = styled.ul`
 
 export function MeaningsList({ meanings }: MeaningsListProps) {
   return (
-    <Container>
+    <Container data-testid="definition">
       {meanings.map((item) => (
         <Meaning key={Math.random()} {...item} />
       ))}

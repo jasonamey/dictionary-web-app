@@ -12,6 +12,7 @@ type MeaningProps = {
 }
 
 const Container = styled.div``
+
 export function Meaning({ partOfSpeech, synonyms, definitions }: MeaningProps) {
   return (
     <Container>

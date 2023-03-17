@@ -20,7 +20,7 @@ const Container = styled.div`
 `
 
 export function PageContainer({ children }: PageContainerProps) {
-  return <Container>{children}</Container>
+  return <Container data-testid="page">{children}</Container>
 }
 
 export default PageContainer
