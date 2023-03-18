@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styled from 'styled-components'
 
 type AudioButtonProps = {
-  audioClip: string
+  clickHandler: () => void
 }
 
 const Button = styled.button`
@@ -13,11 +13,7 @@ const Button = styled.button`
   display: flex;
   align-items: center;
 `
-export function AudioButton({ audioClip }: AudioButtonProps) {
-  const audio = new Audio(audioClip)
-  function clickHandler() {
-    audio.play()
-  }
+export function AudioButton({ clickHandler }: AudioButtonProps) {
   return (
     <Button onClick={clickHandler}>
       <Image src={'/icon-play.svg'} width={50} height={50} alt="audio button" />

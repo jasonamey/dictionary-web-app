@@ -14,7 +14,10 @@ const Container = styled.form`
 const Label = styled.label``
 
 const Input = styled.input`
+  background-image: url('./icon-search.svg');
   background-color: var(--color-bg_2);
+  background-position: 98% 50%;
+  background-repeat: no-repeat;
   color: var(--color-txt_1);
   border: none;
   width: 100%;

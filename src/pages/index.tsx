@@ -49,6 +49,7 @@ export default function Home() {
   } else {
     if (result !== undefined) {
       const { word, text, audio, sourceUrl, meanings } = result
+      const audioClip = new Audio(audio)
       bottomContent = (
         <>
           <HeadingContainer>
@@ -56,7 +57,9 @@ export default function Home() {
               <Heading>{word}</Heading>
               <Phonetic>{text}</Phonetic>
             </HeadingTextContainer>
-            {audio !== undefined && <AudioButton audioClip={audio} />}
+            {audio !== undefined && (
+              <AudioButton clickHandler={() => audioClip.play()} />
+            )}
           </HeadingContainer>
           <MeaningsList meanings={meanings} />
           <Source sourceUrl={sourceUrl} />

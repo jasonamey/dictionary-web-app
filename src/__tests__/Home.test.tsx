@@ -47,7 +47,7 @@ describe('Home', () => {
     //There are 5 definitions for the verb form of cat
     expect(verbDefinitions).toHaveLength(5)
   }),
-    it('a synonym properly renders if it exists, otherwise no synonym displays', async () => {
+    it('synonym properly renders if it exists, otherwise no synonym displays', async () => {
       render(<Home />)
       const synonyms = await screen.findAllByText(/synonym/i)
       //There is only 1 synonym for the noun definition of 'cat', none for verb
@@ -57,13 +57,20 @@ describe('Home', () => {
       render(<Home />)
       const phonetic = await screen.findByText(/kat/i)
       expect(phonetic).toBeInTheDocument()
+    }),
+    it('dsiplay link to wiktionary', async () => {
+      render(<Home />)
+      const link = await screen.findByText(
+        /https:\/\/en.wiktionary.org\/wiki\/cat/i
+      )
+      expect(link).toBeInTheDocument()
+    }),
+    it('displays error message when word is not in dictionary', async () => {
+      render(<Home />)
+      const textbox = screen.getByRole('textbox')
+      await userEvent.type(textbox, 'abcdefg')
+      await userEvent.keyboard('{enter}')
+      const heading = await screen.findByRole('heading')
+      expect(heading).toHaveTextContent(/word not found!/i)
     })
-  it('displays error message when word is not in dictionary', async () => {
-    render(<Home />)
-    const textbox = screen.getByRole('textbox')
-    await userEvent.type(textbox, 'abcdefg')
-    await userEvent.keyboard('{enter}')
-    const heading = await screen.findByRole('heading')
-    expect(heading).toHaveTextContent(/word not found!/i)
-  })
 })
