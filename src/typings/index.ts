@@ -1,20 +1,20 @@
 export type FontStateType = 'inter' | 'lora' | 'inconsolata'
 
-export type DefinitionType = {
+export type AppDefinitionType = {
   definition: string
   example?: string
 }
 
-export type FormattedMeaningType = {
+export type AppFormattedMeaningType = {
   partOfSpeech: string
   synonyms: string[] | undefined
-  definitions: DefinitionType[]
+  definitions: AppDefinitionType[]
 }
 
-export type DictionaryDefinitionType = {
+export type AppDictionaryDefinitionType = {
   word: string
   audio: string
   text: string
-  meanings: FormattedMeaningType[]
+  meanings: AppFormattedMeaningType[]
   sourceUrl: string
 }

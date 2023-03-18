@@ -1,8 +1,8 @@
-import { Response, Phonetic, Meaning } from '../response.types'
+import { Response, Phonetic, ResponseMeaning } from '../response.types'
 import {
-  FormattedMeaningType,
-  DefinitionType,
-  DictionaryDefinitionType,
+  AppFormattedMeaningType,
+  AppDefinitionType,
+  AppDictionaryDefinitionType,
 } from '@/typings'
 import {
   WORD,
@@ -37,14 +37,14 @@ function cleanDefinition(definition: string) {
   }
 }
 
-function getMeanings(meanings: Meaning[]) {
-  let formattedMeanings: FormattedMeaningType[] = []
+function getMeanings(meanings: ResponseMeaning[]) {
+  let formattedMeanings: AppFormattedMeaningType[] = []
   meanings.forEach((meaningItem) => {
-    const meaningToAdd = {} as FormattedMeaningType
+    const meaningToAdd = {} as AppFormattedMeaningType
     meaningToAdd[PART_OF_SPEECH] = meaningItem[PART_OF_SPEECH]
     meaningToAdd[SYNONYMS] =
       meaningItem[SYNONYMS] === undefined ? [] : meaningItem[SYNONYMS]
-    const definitions: DefinitionType[] = []
+    const definitions: AppDefinitionType[] = []
     meaningItem[DEFINITIONS].forEach((definitionItem) => {
       const newDefinitionItem = {
         definition: cleanDefinition(definitionItem[DEFINITION]),
@@ -61,7 +61,8 @@ function getMeanings(meanings: Meaning[]) {
 }
 
 export function shapeApiResponse(jsonResponse: Response) {
-  const wordContext: DictionaryDefinitionType = {} as DictionaryDefinitionType
+  const wordContext: AppDictionaryDefinitionType =
+    {} as AppDictionaryDefinitionType
   const { word, phonetics, meanings, sourceUrls } = jsonResponse
   wordContext[WORD] = word
   wordContext[SOURCE_URL] = sourceUrls[0]

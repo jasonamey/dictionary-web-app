@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Meaning } from './meaning/Meaning'
-import { FormattedMeaningType } from '@/typings'
+import { AppFormattedMeaningType } from '@/typings'
 type MeaningsListProps = {
-  meanings: FormattedMeaningType[]
+  meanings: AppFormattedMeaningType[]
 }
 
 const Container = styled.ul`

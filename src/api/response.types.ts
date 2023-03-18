@@ -3,17 +3,17 @@ export interface Response {
   phonetic: string
   phonetics: Phonetic[]
   origin: string
-  meanings: Meaning[]
+  meanings: ResponseMeaning[]
   sourceUrls: string[]
 }
 
-export interface Meaning {
+export interface ResponseMeaning {
   partOfSpeech: string
-  definitions: Definition[]
+  definitions: ResponseDefinition[]
   synonyms?: string[]
 }
 
-export interface Definition {
+export interface ResponseDefinition {
   definition: string
   example?: string
   synonyms: unknown[]

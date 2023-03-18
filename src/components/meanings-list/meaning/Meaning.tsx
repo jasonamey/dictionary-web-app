@@ -3,12 +3,12 @@ import styled from 'styled-components'
 import { Synonym } from './synonym'
 import { PartOfSpeech } from './part-of-speech'
 import { DefinitionsList } from './definitions-list'
-import { DefinitionType } from '@/typings'
+import { AppDefinitionType } from '@/typings'
 
 type MeaningProps = {
   partOfSpeech: string
   synonyms?: string[]
-  definitions: DefinitionType[]
+  definitions: AppDefinitionType[]
 }
 
 const Container = styled.div``

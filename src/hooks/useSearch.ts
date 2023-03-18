@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
 import { getDefinition } from '@/api/response'
 import { shapeApiResponse } from '@/api/utils'
-import { DictionaryDefinitionType } from '@/typings'
+import { AppDictionaryDefinitionType } from '@/typings'
 
 export function useSearch(term: string) {
   const [dictionaryResponse, setDictionaryDefinition] =
-    useState<DictionaryDefinitionType>()
+    useState<AppDictionaryDefinitionType>()
   const [isLoading, setIsLoading] = useState(false)
   const [isError, setIsError] = useState(false)
   useEffect(() => {

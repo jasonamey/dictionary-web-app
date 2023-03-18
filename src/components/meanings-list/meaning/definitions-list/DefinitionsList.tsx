@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { DefinitionType } from '@/typings'
+import { AppDefinitionType } from '@/typings'
 import { device } from '@/styles/devices'
 
 type DefinitionsListProps = {
-  definitions: DefinitionType[]
+  definitions: AppDefinitionType[]
 }
 
 const Container = styled.ul`
