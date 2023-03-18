@@ -73,7 +73,7 @@ type AppDictionaryDefinitionType = {
 
 */
 
-//check if both phonetic and audio of phonetic exists
+//check if both phonetic and audio of word exists
 function getPhonetics(phonetics: Phonetic[]) {
   for (const item of phonetics) {
     if (
