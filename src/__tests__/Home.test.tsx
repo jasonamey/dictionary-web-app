@@ -2,13 +2,21 @@ import { render, screen, within } from '@testing-library/react'
 import Home from '@/pages/index'
 import { setupServer } from 'msw/node'
 import { rest } from 'msw'
-import data from './testData.json'
+import userEvent from '@testing-library/user-event'
+import testData from './testData.json'
+import errorData from './errorData.json'
 
 const handlers = [
   rest.get(
     'https://api.dictionaryapi.dev/api/v2/entries/en/cat',
     (req, res, ctx) => {
-      return res(ctx.json(data))
+      return res(ctx.json(testData))
+    }
+  ),
+  rest.get(
+    'https://api.dictionaryapi.dev/api/v2/entries/en/abcdefg',
+    (req, res, ctx) => {
+      return res(ctx.json(errorData))
     }
   ),
 ]
@@ -33,10 +41,10 @@ describe('Home', () => {
     //cat should have two parts of speech
     expect(list).toHaveLength(2)
     const nounDefinitions = within(list[0]).queryAllByRole('listitem')
-    //There are 10 definitions for the noun form of cats
+    //There are 10 definitions for the noun form of cat
     expect(nounDefinitions).toHaveLength(10)
     const verbDefinitions = within(list[1]).queryAllByRole('listitem')
-    //There are 5 definitions for the verb form of cats
+    //There are 5 definitions for the verb form of cat
     expect(verbDefinitions).toHaveLength(5)
   }),
     it('a synonym properly renders if it exists, otherwise no synonym displays', async () => {
@@ -50,15 +58,12 @@ describe('Home', () => {
       const phonetic = await screen.findByText(/kat/i)
       expect(phonetic).toBeInTheDocument()
     })
-  // it('changes color when dark mode toggle is switched', async () => {
-  //   render(<Home />)
-  //   const checkbox = await screen.findByRole('checkbox')
-  //   await user.click(checkbox)
-  //   expect(await screen.findByTestId('page')).toHaveStyle(`background-color: ""`)
-  //   console.log(screen.getByTestId('page'))
-
-  //   console.log(style)
-  //   expect(screen.getByTestId('page')).toHaveStyle(`flex-direction: row`)
-
-  // })
+  it('displays error message when word is not in dictionary', async () => {
+    render(<Home />)
+    const textbox = screen.getByRole('textbox')
+    await userEvent.type(textbox, 'abcdefg')
+    await userEvent.keyboard('{enter}')
+    const heading = await screen.findByRole('heading')
+    expect(heading).toHaveTextContent(/word not found!/i)
+  })
 })
