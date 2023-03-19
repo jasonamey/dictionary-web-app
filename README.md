@@ -1,29 +1,35 @@
-# Next.js + Jest
+# Dictionary Web App
 
-This example shows how to configure Jest to work with Next.js.
+Dictionary App that uses the Free Dictionary Api : https://dictionaryapi.dev/
 
-This includes Next.js' built-in support for Global CSS, CSS Modules and TypeScript.
+## Features
 
-## How to Use
+- Can search for any dictionary word
+- Offers standard dictionary type with multiple definitions, parts-of-speech, phonetics and examples
+- Has audio pronunciation of word
+- Handles words that do not exist in dictionary
+- SSR app that maintains dark mode and does not "flash" based on user's stored preference
 
-Quickly get started using [Create Next App](https://github.com/vercel/next.js/tree/canary/packages/create-next-app#readme)!
+![Screenshot](screenshot.png)
 
-In your terminal, run the following command:
+## Built With
 
-```bash
-npx create-next-app --example with-jest with-jest-app
-```
+- NextJs
+- Styled Components
+- Typescript
+- Axios
+- React Testing Library / MSW
 
-```bash
-yarn create next-app --example with-jest with-jest-app
-```
+## Tests
 
-```bash
-pnpm create next-app --example with-jest with-jest-app
-```
+There are integration tests for all scenarios of successful / unsucsessful searching of a word using React Testing Library and Mock Service Worker. There are a handful of unit tests to document the handling of component state.
 
-## Run Jest Tests
+## Future Improvements
 
-```bash
-npm test
-```
+- Ability to change font
+- Additional tests
+
+## Credited Work
+
+- Code for users prefers-color-scheme media query to inline CSS variables for Light / Dark mode comes from: https://joshwcomeau.com/gatsby/dark-mode/
+- Design and assets for app comes from FrontEnd Mentor: https://www.frontendmentor.io/challenges/dictionary-web-app-h5wwnyuKFL
