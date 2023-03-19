@@ -2,6 +2,8 @@
 
 Dictionary App that uses the Free Dictionary Api : https://dictionaryapi.dev/
 
+[Live Site](https://dictionary-web-app-three.vercel.app/)
+
 ## Features
 
 - Can search for any dictionary word
