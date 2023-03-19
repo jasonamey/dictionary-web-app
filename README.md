@@ -10,7 +10,7 @@ Dictionary App that uses the Free Dictionary Api : https://dictionaryapi.dev/
 - Handles words that do not exist in dictionary
 - SSR app that maintains dark mode and does not "flash" based on user's stored preference
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot-dark.png)
 
 ## Built With
 
